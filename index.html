@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Enhanced Heerendra Singh</title>
+<title>Heerendra Singh</title>
 <style>
 /* General styles */
 body {
@@ -196,7 +196,7 @@ Heerendra Singh Official
 </div>
 
 <div class="running-text">
-  <span>आप राधौगढ़ विधानसभा के जिस भी मंडल से हैं, उसे चुनकर ग्रुप का हिस्सा बनें और साथ ही हमारे व्हाट्सएप चैनल में भी जरूर शामिल हों।</span>
+  <span>हआप रघोगढ़ विधानसभा के जिस भी मंडल से हैं, उसे चुनकर ग्रुप का हिस्सा बनें और साथ ही हमारे व्हाट्सएप चैनल में भी जरूर शामिल हों।</span>
 </div>
 
 <div class="whatsapp-card">
@@ -207,6 +207,12 @@ Heerendra Singh Official
   </a>
 </div>
 
+<footer style="text-align: center; margin-top: 20px; padding: 10px; background: orange; color: white;">
+  Created by <a href="https://www.linkedin.com/in/vikram-kewat" target="_blank" style="color: white; text-decoration: underline;">Vikram Kewat</a>
+</footer>
+
+<br><br>
+
 <script>
 // Handle mandal selection
 function handleSelection() {
@@ -214,7 +220,7 @@ function handleSelection() {
   const selectedValue = select.value;
   if (selectedValue) {
     const [mandalName, mandalLink] = selectedValue.split('|');
-    document.getElementById('popup-text').textContent = `आपने '${mandalName}' का चयन किया है।`;
+    document.getElementById('popup-text').textContent = `आप '${mandalName}' मंडल में शामिल होना चाहते हैं? तो "हां" पर क्लिक करें।`;
     const popup = document.getElementById('popup');
     popup.style.display = 'block';
     popup.setAttribute('data-link', mandalLink);
