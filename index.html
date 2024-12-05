@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Enhanced Heerendra Singh</title>
+<style>
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(-45deg, orange, white);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  background-color: orange;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Slider styles */
+.slider {
+  width: 90%;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  animation: slide-animation 10s infinite;
+}
+
+.slides img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+@keyframes slide-animation {
+  0%, 50% { transform: translateX(0); }
+  51%, 100% { transform: translateX(-100%); }
+}
+
+/* Mandal selection dropdown */
+.card {
+  margin: 20px auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.select-box select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid orange;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Custom popup */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border: 2px solid orange;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.popup button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: darkorange;
+}
+
+/* Running text */
+.running-text {
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: orange;
+}
+
+.running-text span {
+  display: inline-block;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* WhatsApp button */
+.whatsapp-card {
+  margin: 20px auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  background: #25d366;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.whatsapp-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #25d366;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.whatsapp-card a img {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Background animation */
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+</style>
+</head>
+<body>
+
+<header>
+Heerendra Singh Official
+</header>
+
+<div class="slider">
+  <div class="slides">
+    <img src="https://i.ibb.co/2d586Kw/1.webp" alt="Image 1">
+    <img src="https://i.ibb.co/9w9JjwV/2.webp" alt="Image 2">
+  </div>
+</div>
+
+<div class="card">
+  <h3>अपने क्षेत्र के मंडल को चुनें</h3>
+  <div class="select-box">
+    <select id="mandalSelect" onchange="handleSelection()">
+      <option value="" selected>मंडल का चयन करें</option>
+      <option value="रुठियाई|https://chat.whatsapp.com/FtDrkfpRYJT5pfynNYsXAI">रुठियाई</option>
+      <option value="राधौगढ़|https://chat.whatsapp.com/H59cvrS4Y4n9DmDdZTpWel">राधौगढ़</option>
+      <option value="जामनेर|https://chat.whatsapp.com/KRiAAnZX7Y56svRFg6TGxI">जामनेर</option>
+      <option value="आरोन|https://chat.whatsapp.com/KRiAAnZX7Y56svRFg6TGxI">आरोन</option>
+    </select>
+  </div>
+</div>
+
+<div class="popup" id="popup">
+  <p id="popup-text"></p>
+  <button onclick="confirmPopup(true)">हां</button>
+  <button onclick="confirmPopup(false)">नहीं</button>
+</div>
+
+<div class="running-text">
+  <span>हमारे कम्युनिटी का हिस्सा बनें और अपने क्षेत्र की हर जानकारी से अपडेट रहें।</span>
+</div>
+
+<div class="whatsapp-card">
+  <h3>हमारे व्हाट्सएप चैनल से जुड़ें</h3>
+  <a href="https://whatsapp.com/channel/0029Va4rP50BvvshUm3lVt3W">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    जुड़ें
+  </a>
+</div>
+
+<script>
+// Handle mandal selection
+function handleSelection() {
+  const select = document.getElementById('mandalSelect');
+  const selectedValue = select.value;
+  if (selectedValue) {
+    const [mandalName, mandalLink] = selectedValue.split('|');
+    document.getElementById('popup-text').textContent = `आपने '${mandalName}' का चयन किया है।`;
+    const popup = document.getElementById('popup');
+    popup.style.display = 'block';
+    popup.setAttribute('data-link', mandalLink);
+  }
+}
+
+// Confirm popup action
+function confirmPopup(isConfirmed) {
+  const popup = document.getElementById('popup');
+  if (isConfirmed) {
+    const link = popup.getAttribute('data-link');
+    window.location.href = link;
+  } else {
+    popup.style.display = 'none';
+  }
+}
+</script>
+
+</body>
+</html>
